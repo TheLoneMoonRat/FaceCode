@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://clf0dj4dhuf1w"]
+
+[ext_resource type="Material" uid="uid://dae20lx1amfmf" path="res://Resources/Array_box.tres" id="1_6vymp"]
+[ext_resource type="Texture2D" uid="uid://sttx513rwxyp" path="res://Assets/438209139_1132073168133085_6810466013732300952_n.jpg" id="2_vghvh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Array_box_one" type="Node2D" parent="."]
+modulate = Color(0.235294, 0.113725, 1, 1)
+self_modulate = Color(1, 0.227451, 1, 1)
+material = ExtResource("1_6vymp")
+position = Vector2(530.708, 177.004)
+
+[node name="43820913911320731681330856810466013732300952N" type="Sprite2D" parent="."]
+position = Vector2(552, 295)
+texture = ExtResource("2_vghvh")

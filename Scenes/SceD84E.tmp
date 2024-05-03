@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://clf0dj4dhuf1w"]
+[gd_scene load_steps=13 format=3 uid="uid://clf0dj4dhuf1w"]
 
 [ext_resource type="Texture2D" uid="uid://cmrqvgplag2y4" path="res://Assets/Block (1).png" id="1_shj04"]
 [ext_resource type="Texture2D" uid="uid://c7283m6ts0crc" path="res://Assets/Block (2).png" id="2_nxycu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c85drdhx2s0c2" path="res://Assets/Block (8).png" id="8_8b4fp"]
 [ext_resource type="Texture2D" uid="uid://675pjkbb1yb0" path="res://Assets/Block (9).png" id="9_unae2"]
 [ext_resource type="Texture2D" uid="uid://0nl0cmo5agp2" path="res://Assets/Block.png" id="10_470sj"]
+[ext_resource type="Script" path="res://Scripts/test.gd" id="11_55em7"]
 [ext_resource type="Script" path="res://Scripts/position_blocks.gd" id="11_rbldg"]
 
 [node name="Node2D" type="Node2D"]
@@ -63,6 +64,7 @@ texture = ExtResource("9_unae2")
 position = Vector2(50, 612)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("10_470sj")
+script = ExtResource("11_55em7")
 
-[node name="Stack" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("11_rbldg")

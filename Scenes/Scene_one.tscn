@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://clf0dj4dhuf1w"]
+[gd_scene load_steps=14 format=3 uid="uid://clf0dj4dhuf1w"]
 
 [ext_resource type="Texture2D" uid="uid://cmrqvgplag2y4" path="res://Assets/Block (1).png" id="1_shj04"]
 [ext_resource type="Texture2D" uid="uid://c7283m6ts0crc" path="res://Assets/Block (2).png" id="2_nxycu"]
@@ -11,8 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://675pjkbb1yb0" path="res://Assets/Block (9).png" id="9_unae2"]
 [ext_resource type="Texture2D" uid="uid://0nl0cmo5agp2" path="res://Assets/Block.png" id="10_470sj"]
 [ext_resource type="Script" path="res://Scripts/position_blocks.gd" id="11_rbldg"]
+[ext_resource type="Texture2D" uid="uid://d2lkd7a5akq3a" path="res://Assets/Variables Plate.png" id="12_hk2v7"]
+[ext_resource type="Texture2D" uid="uid://c12erc6bxbd52" path="res://Assets/Terminal.png" id="13_eaqam"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="VariablesPlate" type="Sprite2D" parent="."]
+position = Vector2(201, 101)
+texture = ExtResource("12_hk2v7")
+
+[node name="Terminal" type="Sprite2D" parent="."]
+position = Vector2(951, 250)
+texture = ExtResource("13_eaqam")
 
 [node name="Block(1)" type="Sprite2D" parent="."]
 position = Vector2(150, 612)
@@ -40,22 +50,22 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_7g1p8")
 
 [node name="Block(6)" type="Sprite2D" parent="."]
-position = Vector2(751, 488)
+position = Vector2(740, 583)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_sfc0v")
 
 [node name="Block(7)" type="Sprite2D" parent="."]
-position = Vector2(869, 470)
+position = Vector2(858, 565)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_ne5e7")
 
 [node name="Block(8)" type="Sprite2D" parent="."]
-position = Vector2(954, 471)
+position = Vector2(943, 566)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_8b4fp")
 
 [node name="Block(9)" type="Sprite2D" parent="."]
-position = Vector2(1031, 472)
+position = Vector2(1020, 567)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("9_unae2")
 
@@ -66,3 +76,35 @@ texture = ExtResource("10_470sj")
 
 [node name="Stack" type="Node2D" parent="."]
 script = ExtResource("11_rbldg")
+
+[node name="variables_heading" type="RichTextLabel" parent="."]
+offset_left = 126.0
+offset_top = 13.0
+offset_right = 259.0
+offset_bottom = 59.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Variables"
+fit_content = true
+autowrap_mode = 0
+
+[node name="terminal_content" type="RichTextLabel" parent="."]
+modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
+offset_left = 777.0
+offset_top = 70.0
+offset_right = 1125.0
+offset_bottom = 478.0
+theme_override_font_sizes/normal_font_size = 25
+fit_content = true
+scroll_following = true
+autowrap_mode = 0
+
+[node name="terminal_heading" type="RichTextLabel" parent="."]
+modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
+offset_left = 880.0
+offset_top = 13.0
+offset_right = 1013.0
+offset_bottom = 59.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Terminal"
+fit_content = true
+autowrap_mode = 0

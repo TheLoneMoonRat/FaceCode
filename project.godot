@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Face Code---godot"
-run/main_scene="res://Scenes/Scene_one.tscn"
+run/main_scene="res://Scenes/Coding_environment.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Misc/icon.svg"
 

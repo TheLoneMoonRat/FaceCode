@@ -1,0 +1,231 @@
+[gd_scene load_steps=20 format=3 uid="uid://c5t755ei2rgeh"]
+
+[ext_resource type="Texture2D" uid="uid://c12erc6bxbd52" path="res://Assets/Terminal.png" id="2_2g3af"]
+[ext_resource type="Texture2D" uid="uid://cmrqvgplag2y4" path="res://Assets/Block (1).png" id="3_1q378"]
+[ext_resource type="Texture2D" uid="uid://c7283m6ts0crc" path="res://Assets/Block (2).png" id="4_5v6vb"]
+[ext_resource type="Texture2D" uid="uid://dfj4rxr0wwm0k" path="res://Assets/Block (3).png" id="5_0xx8r"]
+[ext_resource type="Texture2D" uid="uid://dckyfb6cfwqj3" path="res://Assets/Block (4).png" id="6_qtbec"]
+[ext_resource type="Texture2D" uid="uid://clk8tqamhblvg" path="res://Assets/Block (5).png" id="7_avu7i"]
+[ext_resource type="Texture2D" uid="uid://dnhr060tblwq8" path="res://Assets/Block (6).png" id="8_q7aoa"]
+[ext_resource type="Texture2D" uid="uid://buivnsmtwtvxu" path="res://Assets/Block (7).png" id="9_6y5vm"]
+[ext_resource type="Texture2D" uid="uid://c85drdhx2s0c2" path="res://Assets/Block (8).png" id="10_fjf31"]
+[ext_resource type="Script" path="res://Scripts/code_editor.gd" id="11_8igtm"]
+[ext_resource type="Texture2D" uid="uid://675pjkbb1yb0" path="res://Assets/Block (9).png" id="11_plh3c"]
+[ext_resource type="Texture2D" uid="uid://0nl0cmo5agp2" path="res://Assets/Block.png" id="12_db3fm"]
+[ext_resource type="Texture2D" uid="uid://bywwlh8xpmp7m" path="res://Assets/Canvas.png" id="12_rwh0j"]
+[ext_resource type="Texture2D" uid="uid://cqgou6fihwg38" path="res://Assets/Block_canvas.png" id="13_h4xfv"]
+[ext_resource type="Texture2D" uid="uid://ds31x8oxay022" path="res://Assets/Reference.png" id="14_x2pjn"]
+[ext_resource type="Texture2D" uid="uid://dyoasaa38yr42" path="res://Assets/Operate.png" id="15_vf2jm"]
+[ext_resource type="Texture2D" uid="uid://2lqvvvyu5ivn" path="res://Assets/Assign.png" id="16_0k3lj"]
+[ext_resource type="Texture2D" uid="uid://wjx55utxcprt" path="res://Assets/Compare.png" id="17_j7gqw"]
+[ext_resource type="Texture2D" uid="uid://xec5acc311he" path="res://Assets/Repeat.png" id="18_h4v4r"]
+
+[node name="CodingEnvironment" type="Node2D"]
+
+[node name="Block(1)" type="Sprite2D" parent="."]
+position = Vector2(675, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_1q378")
+
+[node name="Block(1)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(150, 612)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_1q378")
+
+[node name="Block(2)" type="Sprite2D" parent="."]
+position = Vector2(730, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_5v6vb")
+
+[node name="Block(2)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(371, 346)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_5v6vb")
+
+[node name="Block(3)" type="Sprite2D" parent="."]
+position = Vector2(785, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("5_0xx8r")
+
+[node name="Block(3)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(438, 433)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_0xx8r")
+
+[node name="Block(4)" type="Sprite2D" parent="."]
+position = Vector2(840, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("6_qtbec")
+
+[node name="Block(4)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(495, 468)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_qtbec")
+
+[node name="Block(5)" type="Sprite2D" parent="."]
+position = Vector2(895, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("7_avu7i")
+
+[node name="Block(5)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(637, 490)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_avu7i")
+
+[node name="Block(6)" type="Sprite2D" parent="."]
+position = Vector2(950, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("8_q7aoa")
+
+[node name="Block(6)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(740, 583)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_q7aoa")
+
+[node name="Block(7)" type="Sprite2D" parent="."]
+position = Vector2(1005, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("9_6y5vm")
+
+[node name="Block(7)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(858, 565)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_6y5vm")
+
+[node name="Block(8)" type="Sprite2D" parent="."]
+position = Vector2(1060, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("10_fjf31")
+
+[node name="Block(8)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(943, 566)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_fjf31")
+
+[node name="Block(9)" type="Sprite2D" parent="."]
+position = Vector2(1115, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("11_plh3c")
+
+[node name="Block(9)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1020, 567)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_plh3c")
+
+[node name="Block(0)" type="Sprite2D" parent="."]
+position = Vector2(620, 612)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("12_db3fm")
+
+[node name="Block(0)2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(50, 612)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_db3fm")
+
+[node name="Stack" type="Node2D" parent="."]
+script = ExtResource("11_8igtm")
+
+[node name="Terminal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(875, 293)
+texture = ExtResource("2_2g3af")
+
+[node name="terminal_content" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
+offset_left = 701.0
+offset_top = 113.0
+offset_right = 1049.0
+offset_bottom = 521.0
+theme_override_font_sizes/normal_font_size = 25
+fit_content = true
+scroll_following = true
+autowrap_mode = 0
+
+[node name="terminal_heading" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
+offset_left = 804.0
+offset_top = 56.0
+offset_right = 937.0
+offset_bottom = 102.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Terminal"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Canvas" type="Sprite2D" parent="."]
+position = Vector2(104, 326)
+scale = Vector2(0.975, 0.989231)
+texture = ExtResource("12_rwh0j")
+
+[node name="BlockCanvas" type="Sprite2D" parent="."]
+position = Vector2(395, 324)
+texture = ExtResource("13_h4xfv")
+
+[node name="Reference" type="Sprite2D" parent="."]
+position = Vector2(104, 123)
+texture = ExtResource("14_x2pjn")
+
+[node name="Operate" type="Sprite2D" parent="."]
+position = Vector2(104, 323)
+texture = ExtResource("15_vf2jm")
+
+[node name="Assign" type="Sprite2D" parent="."]
+position = Vector2(104, 223)
+texture = ExtResource("16_0k3lj")
+
+[node name="Compare" type="Sprite2D" parent="."]
+position = Vector2(104, 423)
+texture = ExtResource("17_j7gqw")
+
+[node name="Repeat" type="Sprite2D" parent="."]
+position = Vector2(104, 523)
+texture = ExtResource("18_h4v4r")
+
+[node name="toolkit_heading2" type="RichTextLabel" parent="."]
+modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 345.0
+offset_top = 25.0
+offset_right = 449.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Canvas
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="toolkit_heading" type="RichTextLabel" parent="."]
+modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_top = 25.0
+offset_right = 167.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Toolkit"
+fit_content = true
+autowrap_mode = 0

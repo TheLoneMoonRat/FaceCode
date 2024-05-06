@@ -4,6 +4,8 @@ var mouse_index = -1
 var clone = null
 var canvas = []
 var highlighted_index
+var highlighting = false
+var outliner
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -32,13 +34,32 @@ func _unhandled_input(event):
 					temp.clear()
 					get_parent().add_child(canvas[0])
 					canvas[0].move_to_front()
+				else:
+					var temp = []
+					var index = len(canvas)
+					for i in range (highlighted_index, index):
+						temp.append(canvas[highlighted_index])
+						canvas.remove_at(highlighted_index)
+					canvas.append(clone.duplicate())
+					get_parent().add_child(canvas[highlighted_index])
+					canvas[highlighted_index].move_to_front()
+					for item in temp:
+						canvas.append(item)
+					temp.clear()
 				if len(canvas) <= 18:
 					for i in range (0, len(canvas)):
-						canvas[i].position = Vector2(394, first_index + i * 30)
+						if not outliner:
+							canvas[i].position = Vector2(394, first_index + i * 30)
+						elif i == highlighted_index or canvas[i].position.x == 435:
+							canvas[i].position = Vector2(435, first_index + i * 30)
 			if clone != null:
 				clone.queue_free()
 				clone = null
+			if outliner != null:
+				outliner.queue_free()
+				outliner = null
 			mouse_index = -1
+			highlighted_index = -1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var mouse_co = get_viewport().get_mouse_position()
@@ -50,21 +71,30 @@ func _process(delta):
 		clone.position = mouse_co
 		if len(canvas) > 0 and (mouse_co.y >= 80 and mouse_co.y <= 650) and (mouse_co.x >= 204 and mouse_co.x <= 584):
 			if mouse_co.y > canvas[0].position.y and mouse_co.y < canvas[len(canvas) - 1].position.y:
-				highlighted_index = floor((mouse_co.y - canvas[0].position.y) / 30)
-				print(highlighted_index + 1)
-				var temp = []
-				for i in range (highlighted_index + 1, len(canvas) - 1):
-					temp.append(canvas[i])
-					canvas.remove_at(i)
-				#canvas.append(get_parent().get_node("Outline").duplicate())
-				#get_parent().add_child(canvas[highlighted_index + 1])
-				#canvas[highlighted_index + 1].move_to_front()
-				#canvas[highlighted_index + 1].visible = true
-				#for item in temp:
-					#canvas.append(item)
-				#temp.clear()
-		elif highlighted_index != null:
-			canvas[highlighted_index + 1].queue_free()
-			canvas.remove_at(highlighted_index + 1)
+				highlighted_index = floor((mouse_co.y - canvas[0].position.y) / 30) + 1
+				var first_index = 365 - 30 * floor((len(canvas) + 1) / 2) - 15 * ((len(canvas) + 1) % 2)
+				for i in range (0, len(canvas)):
+					if i < highlighted_index:
+						if canvas[i].position.x != 435:
+							canvas[i].position = Vector2(394, first_index + i * 30)
+						else:
+							canvas[i].position = Vector2(435, first_index + i * 30)
+					else:
+						if canvas[i].position.x != 435:
+							canvas[i].position = Vector2(394, first_index + i * 30 + 30)
+						else:
+							canvas[i].position = Vector2(435, first_index + i * 30 + 30)
+				if mouse_co.x >= 465 and outliner == null:
+					outliner = get_parent().get_node("Outline").duplicate()
+					get_parent().add_child(outliner)
+					outliner.visible = true
+					outliner.move_to_front()
+					outliner.position = Vector2(435, first_index + highlighted_index * 30)
+				elif outliner != null and (mouse_co.y <= outliner.position.y - 15 or mouse_co.y >= outliner.position.y + 15):
+					outliner.queue_free()
+					outliner = null		
+		elif outliner != null:
+			outliner.queue_free()
+			outliner = null
 	#print(mouse_co)
 		

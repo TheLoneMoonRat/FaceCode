@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5t755ei2rgeh"]
+[gd_scene load_steps=35 format=3 uid="uid://c5t755ei2rgeh"]
 
 [ext_resource type="Texture2D" uid="uid://c12erc6bxbd52" path="res://Assets/Terminal.png" id="2_2g3af"]
 [ext_resource type="Texture2D" uid="uid://cmrqvgplag2y4" path="res://Assets/Block (1).png" id="3_1q378"]
@@ -19,7 +19,21 @@
 [ext_resource type="Texture2D" uid="uid://2lqvvvyu5ivn" path="res://Assets/Assign.png" id="16_0k3lj"]
 [ext_resource type="Texture2D" uid="uid://wjx55utxcprt" path="res://Assets/Compare.png" id="17_j7gqw"]
 [ext_resource type="Texture2D" uid="uid://xec5acc311he" path="res://Assets/Repeat.png" id="18_h4v4r"]
+[ext_resource type="Texture2D" uid="uid://dy5jn4nhxr46n" path="res://Assets/Equal.png" id="19_v2r3u"]
 [ext_resource type="Texture2D" uid="uid://blc0nqas5ngu" path="res://Assets/outline.png" id="20_6t3pm"]
+[ext_resource type="Texture2D" uid="uid://bcpmqr8mxmdym" path="res://Assets/Plus.png" id="21_c416c"]
+[ext_resource type="Texture2D" uid="uid://bxrcetdx7r4ns" path="res://Assets/Compiler.png" id="21_pdhte"]
+[ext_resource type="Texture2D" uid="uid://bviojadbcrcjo" path="res://Assets/Conditional.png" id="22_jm5em"]
+[ext_resource type="Texture2D" uid="uid://bm1eibhcmwwlv" path="res://Assets/Minus.png" id="22_wk8fg"]
+[ext_resource type="Texture2D" uid="uid://eworhcger8w7" path="res://Assets/Multiply.png" id="23_4o34r"]
+[ext_resource type="Texture2D" uid="uid://bmtadoy3uv3we" path="res://Assets/Clear.png" id="23_7588j"]
+[ext_resource type="Texture2D" uid="uid://dlrkx7gnv3jji" path="res://Assets/The Box.png" id="24_5ocd5"]
+[ext_resource type="Texture2D" uid="uid://ddlpsqjh4b2cr" path="res://Assets/Divide.png" id="24_rt2t3"]
+[ext_resource type="Texture2D" uid="uid://dhqy1lfyaa6j5" path="res://Assets/Equivalent.png" id="25_s0ep7"]
+[ext_resource type="Texture2D" uid="uid://dtpsv20qxa8ie" path="res://Assets/Greater than.png" id="26_8duh6"]
+[ext_resource type="Texture2D" uid="uid://60275d11fott" path="res://Assets/Less than.png" id="27_d1v63"]
+[ext_resource type="Texture2D" uid="uid://ckrv2uw2jbh7q" path="res://Assets/Greater than or equal.png" id="28_6i8vr"]
+[ext_resource type="Texture2D" uid="uid://nmc4gjnhde4q" path="res://Assets/Less than or equal.png" id="29_7r71f"]
 
 [node name="CodingEnvironment" type="Node2D"]
 
@@ -175,24 +189,191 @@ position = Vector2(395, 324)
 texture = ExtResource("13_h4xfv")
 
 [node name="Reference" type="Sprite2D" parent="."]
-position = Vector2(104, 123)
+position = Vector2(104, 100)
 texture = ExtResource("14_x2pjn")
 
-[node name="Operate" type="Sprite2D" parent="."]
-position = Vector2(104, 323)
-texture = ExtResource("15_vf2jm")
+[node name="RichTextLabel" type="RichTextLabel" parent="Reference"]
+offset_left = -39.0
+offset_top = -12.0
+offset_right = 41.0
+offset_bottom = 14.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+text = "Reference"
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="TheBox" type="Sprite2D" parent="Reference"]
+visible = false
+position = Vector2(-25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="TheBox2" type="Sprite2D" parent="Reference"]
+visible = false
+position = Vector2(25, 0)
+texture = ExtResource("24_5ocd5")
 
 [node name="Assign" type="Sprite2D" parent="."]
-position = Vector2(104, 223)
+position = Vector2(104, 200)
 texture = ExtResource("16_0k3lj")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Assign"]
+offset_left = -28.0
+offset_top = -13.0
+offset_right = 25.0
+offset_bottom = 13.0
+mouse_filter = 2
+text = "Assign"
+
+[node name="TheBox" type="Sprite2D" parent="Assign"]
+visible = false
+position = Vector2(25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="TheBox2" type="Sprite2D" parent="Assign"]
+visible = false
+position = Vector2(-25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="Equal" type="Sprite2D" parent="Assign"]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("19_v2r3u")
+
+[node name="Operate" type="Sprite2D" parent="."]
+position = Vector2(104, 300)
+texture = ExtResource("15_vf2jm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Operate"]
+offset_left = -31.0
+offset_top = -13.0
+offset_right = 37.0
+offset_bottom = 13.0
+mouse_filter = 2
+text = "Operate"
+
+[node name="TheBox" type="Sprite2D" parent="Operate"]
+visible = false
+position = Vector2(25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="TheBox2" type="Sprite2D" parent="Operate"]
+visible = false
+position = Vector2(-25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="ItemList" type="ItemList" parent="Operate"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -25.0
+offset_right = 81.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+max_text_lines = 3
+item_count = 4
+item_0/text = ""
+item_0/icon = ExtResource("21_c416c")
+item_1/text = ""
+item_1/icon = ExtResource("22_wk8fg")
+item_2/text = ""
+item_2/icon = ExtResource("23_4o34r")
+item_3/text = ""
+item_3/icon = ExtResource("24_rt2t3")
+
 [node name="Compare" type="Sprite2D" parent="."]
-position = Vector2(104, 423)
+position = Vector2(104, 400)
 texture = ExtResource("17_j7gqw")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Compare"]
+offset_left = -36.0
+offset_top = -13.0
+offset_right = 38.0
+offset_bottom = 13.0
+mouse_filter = 2
+text = "Compare"
+
+[node name="TheBox2" type="Sprite2D" parent="Compare"]
+visible = false
+position = Vector2(-25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="TheBox" type="Sprite2D" parent="Compare"]
+visible = false
+position = Vector2(25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="ItemList" type="ItemList" parent="Compare"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.8
+offset_top = -121.85
+offset_right = 82.2
+offset_bottom = -50.8499
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+max_text_lines = 3
+item_count = 5
+item_0/text = ""
+item_0/icon = ExtResource("25_s0ep7")
+item_1/text = ""
+item_1/icon = ExtResource("26_8duh6")
+item_2/text = ""
+item_2/icon = ExtResource("27_d1v63")
+item_3/text = ""
+item_3/icon = ExtResource("28_6i8vr")
+item_4/text = ""
+item_4/icon = ExtResource("29_7r71f")
+
 [node name="Repeat" type="Sprite2D" parent="."]
-position = Vector2(104, 523)
+position = Vector2(104, 500)
 texture = ExtResource("18_h4v4r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Repeat"]
+offset_left = -28.0
+offset_top = -12.0
+offset_right = 33.0
+offset_bottom = 14.0
+mouse_filter = 2
+text = "Repeat"
+
+[node name="TheBox" type="Sprite2D" parent="Repeat"]
+visible = false
+position = Vector2(25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="TheBox2" type="Sprite2D" parent="Repeat"]
+visible = false
+position = Vector2(-25, 0)
+texture = ExtResource("24_5ocd5")
+
+[node name="Conditional" type="Sprite2D" parent="."]
+position = Vector2(104, 600)
+texture = ExtResource("22_jm5em")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Conditional"]
+offset_left = -46.0
+offset_top = -13.0
+offset_right = 46.0
+offset_bottom = 13.0
+mouse_filter = 2
+text = "Conditional"
+
+[node name="TheBox" type="Sprite2D" parent="Conditional"]
+visible = false
+texture = ExtResource("24_5ocd5")
 
 [node name="toolkit_heading2" type="RichTextLabel" parent="."]
 modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
@@ -235,3 +416,11 @@ autowrap_mode = 0
 visible = false
 position = Vector2(418, 324)
 texture = ExtResource("20_6t3pm")
+
+[node name="Compiler" type="Sprite2D" parent="."]
+position = Vector2(676, 35)
+texture = ExtResource("21_pdhte")
+
+[node name="Clear" type="Sprite2D" parent="."]
+position = Vector2(817, 35)
+texture = ExtResource("23_7588j")

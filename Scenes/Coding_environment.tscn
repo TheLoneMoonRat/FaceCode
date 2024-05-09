@@ -209,10 +209,28 @@ visible = false
 position = Vector2(-25, 0)
 texture = ExtResource("24_5ocd5")
 
+[node name="LineEdit" type="LineEdit" parent="Reference/TheBox"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Array"
+
 [node name="TheBox2" type="Sprite2D" parent="Reference"]
 visible = false
 position = Vector2(25, 0)
 texture = ExtResource("24_5ocd5")
+
+[node name="LineEdit" type="LineEdit" parent="Reference/TheBox2"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Index"
 
 [node name="Assign" type="Sprite2D" parent="."]
 position = Vector2(104, 200)
@@ -228,13 +246,31 @@ text = "Assign"
 
 [node name="TheBox" type="Sprite2D" parent="Assign"]
 visible = false
-position = Vector2(25, 0)
+position = Vector2(-25, 0)
 texture = ExtResource("24_5ocd5")
+
+[node name="LineEdit" type="LineEdit" parent="Assign/TheBox"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Variable"
 
 [node name="TheBox2" type="Sprite2D" parent="Assign"]
 visible = false
-position = Vector2(-25, 0)
+position = Vector2(25, 0)
 texture = ExtResource("24_5ocd5")
+
+[node name="LineEdit" type="LineEdit" parent="Assign/TheBox2"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Value"
 
 [node name="Equal" type="Sprite2D" parent="Assign"]
 visible = false
@@ -258,10 +294,28 @@ visible = false
 position = Vector2(25, 0)
 texture = ExtResource("24_5ocd5")
 
+[node name="LineEdit" type="LineEdit" parent="Operate/TheBox"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Value 1"
+
 [node name="TheBox2" type="Sprite2D" parent="Operate"]
 visible = false
 position = Vector2(-25, 0)
 texture = ExtResource("24_5ocd5")
+
+[node name="LineEdit" type="LineEdit" parent="Operate/TheBox2"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Value 2"
 
 [node name="ItemList" type="ItemList" parent="Operate"]
 visible = false
@@ -305,10 +359,28 @@ visible = false
 position = Vector2(-25, 0)
 texture = ExtResource("24_5ocd5")
 
+[node name="LineEdit" type="LineEdit" parent="Compare/TheBox2"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Value 1"
+
 [node name="TheBox" type="Sprite2D" parent="Compare"]
 visible = false
 position = Vector2(25, 0)
 texture = ExtResource("24_5ocd5")
+
+[node name="LineEdit" type="LineEdit" parent="Compare/TheBox"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Value 2"
 
 [node name="ItemList" type="ItemList" parent="Compare"]
 visible = false
@@ -354,10 +426,28 @@ visible = false
 position = Vector2(25, 0)
 texture = ExtResource("24_5ocd5")
 
+[node name="LineEdit" type="LineEdit" parent="Repeat/TheBox"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Start Index"
+
 [node name="TheBox2" type="Sprite2D" parent="Repeat"]
 visible = false
 position = Vector2(-25, 0)
 texture = ExtResource("24_5ocd5")
+
+[node name="LineEdit" type="LineEdit" parent="Repeat/TheBox2"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "# Repetitions"
 
 [node name="Conditional" type="Sprite2D" parent="."]
 position = Vector2(104, 600)
@@ -374,6 +464,15 @@ text = "Conditional"
 [node name="TheBox" type="Sprite2D" parent="Conditional"]
 visible = false
 texture = ExtResource("24_5ocd5")
+
+[node name="LineEdit" type="LineEdit" parent="Conditional/TheBox"]
+visible = false
+offset_left = -33.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+placeholder_text = "Condition"
 
 [node name="toolkit_heading2" type="RichTextLabel" parent="."]
 modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)

@@ -21,6 +21,8 @@ func movement_changes(index):
 		elif n.get_name() == "ItemList":
 			n.scale = Vector2(0.1, 0.2)
 			n.position = Vector2(-7.5, -7.5)
+		elif n.get_name() != "RichTextLabel":
+			n.get_node("LineEdit").visible = true
 		n.visible = true
 func _unhandled_input(event):
 	var mouse_co = get_viewport().get_mouse_position()
@@ -94,9 +96,18 @@ func _process(delta):
 			clone.move_to_front()
 		clone.position = mouse_co
 		if len(canvas) > 0 and (mouse_co.y >= 80 and mouse_co.y <= 650) and (mouse_co.x >= 204 and mouse_co.x <= 584):
-			if mouse_co.y > canvas[0].position.y and mouse_co.y < canvas[len(canvas) - 1].position.y:
+			var basis = true
+			for j in range (0, len(canvas)):
+				if abs(mouse_co.y - canvas[j].position.y) <= 5:
+					if mouse_co.x >= 410 and mouse_co.x <= 477:
+						canvas[j].get_node("TheBox").get_node("LineEdit").text = "NEST"
+					elif mouse_co.x >= 310 and mouse_co.x <= 377:
+						canvas[j].get_node("TheBox2").get_node("LineEdit").text = "NEST"
+					basis = false				
+			var first_index = 365 - 45 * floor((len(canvas) + 1) / 2) - 15 * ((len(canvas) + 1) % 2)
+			if basis and mouse_co.y > canvas[0].position.y and mouse_co.y < canvas[len(canvas) - 1].position.y:
 				highlighted_index = floor((mouse_co.y - canvas[0].position.y) / 45) + 1
-				var first_index = 365 - 45 * floor((len(canvas) + 1) / 2) - 15 * ((len(canvas) + 1) % 2)
+
 				for i in range (0, len(canvas)):
 					if i < highlighted_index:
 						canvas[i].position = Vector2(canvas[i].position.x, first_index + i * 45)

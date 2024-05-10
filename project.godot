@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Coding_environment.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Misc/icon.svg"
 
+[dotnet]
+
+project/assembly_name="Face Code---godot"
+
 [rendering]
 
 renderer/rendering_method="mobile"
